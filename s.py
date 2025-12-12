@@ -1,7 +1,3 @@
-"""
-WORLD FRAUD ENGINE — ALBERTA PRIORITY (ADVANCED TD-STYLE VERSION)
-Author: Ashvi
-
 Features:
 - Alberta city verification
 - Worldwide province + country validation (pycountry)
@@ -226,11 +222,11 @@ def decide(risk):
     elif 0.50 <= risk <= 0.80:
         return "APPROVED (FLAGGED)"
     elif 0.80 < risk <= 0.90:
-        return "CALL BANK (Verification Recommended)"
+        return "CALL BANK (Verification Needed)"
     elif 0.90 < risk < 1.0:
-        return "CARD UNDER REVIEW (High Risk)"
+        return "CARD UNDER REVIEW (High Risk). Do not process.  "
     else:
-        return "CRITICAL RISK (Manual Review Needed)"
+        return "CRITICAL RISK — BLOCK IMMEDIATELY"
 
 
 def print_block_instructions(block_type):
@@ -544,3 +540,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
